@@ -39,7 +39,7 @@ export const getApiLimitCount = async () => {
     return 0;
   }
   const user = await User.findOne({ userId });
-  const userApiLimit = user.count;
+  const userApiLimit = user?.count;
   if (!userApiLimit) {
     return 0;
   }
