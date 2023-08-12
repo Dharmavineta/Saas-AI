@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Empty from "../../_components/Empty";
@@ -37,12 +37,15 @@ const Video = () => {
       const response = await axios.post("/api/video", values);
       setVideo(response.data[0]);
     } catch (error) {
-      if (error?.response?.status === 403) {
-        proModal.opOpen();
-      } else {
-        toast.error("Something Went wrong");
+      if (error instanceof AxiosError) {
+        if (error?.response?.status === 403) {
+          proModal.opOpen();
+        } else {
+          toast.error("Something Went wrong");
+        }
+
+        console.log(error);
       }
-      console.log(error);
     } finally {
       router.refresh();
     }
