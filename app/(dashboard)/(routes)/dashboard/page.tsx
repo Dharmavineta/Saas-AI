@@ -8,7 +8,7 @@ import { BsCardImage, BsMusicNote, BsCodeSlash } from "react-icons/bs";
 import { AiOutlineVideoCamera } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
-export const tools = [
+const tools = [
   {
     lable: "Conversation",
     icon: BiMessageAltDetail,

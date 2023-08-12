@@ -17,7 +17,7 @@ const testimonials = [
     description: "This is the best AI Tool I've ever used",
   },
   {
-    name: "Rajest",
+    name: "Rajesh",
     avatar: "R",
     title: "Software Engineer",
     description: "This is the best AI Tool I've ever used",

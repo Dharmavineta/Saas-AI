@@ -9,8 +9,6 @@ import {
 } from "../ui/dialog";
 import { useProModal } from "@/hooks/use-pro-modal";
 import { Badge } from "../ui/badge";
-import { tools } from "@/app/(dashboard)/(routes)/dashboard/page";
-
 import { Card } from "../ui/card";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
@@ -18,6 +16,48 @@ import { GoZap } from "react-icons/go";
 import { AiOutlineCheck } from "react-icons/ai";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { BiMessageAltDetail } from "react-icons/bi";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { BsCardImage, BsMusicNote, BsCodeSlash } from "react-icons/bs";
+import { AiOutlineVideoCamera } from "react-icons/ai";
+
+const tools = [
+  {
+    lable: "Conversation",
+    icon: BiMessageAltDetail,
+    color: "text-violet-500",
+    bgColor: "bg-violet-500/10",
+    href: "/conversation",
+  },
+  {
+    lable: "Music Generation",
+    icon: BsMusicNote,
+    color: "text-emerald-500",
+    bgColor: "bg-emerald-500/10",
+    href: "/music",
+  },
+  {
+    lable: "Image Generation",
+    icon: BsCardImage,
+    color: "text-pink-500",
+    bgColor: "bg-pink-500/10",
+    href: "/image",
+  },
+  {
+    lable: "Music Generation",
+    icon: AiOutlineVideoCamera,
+    color: "text-orange-500",
+    bgColor: "bg-orange-500/10",
+    href: "/video",
+  },
+  {
+    lable: "Music Generation",
+    icon: BsCodeSlash,
+    color: "text-green-500",
+    bgColor: "bg-green-500/10",
+    href: "/code",
+  },
+];
 
 const ProModal = () => {
   const [isLoading, setIsLoading] = useState(false);
