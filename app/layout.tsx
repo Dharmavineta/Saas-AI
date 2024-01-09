@@ -10,7 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Simba",
-  description: "Smart AI",
+  description: "Your personal AI assistant",
+  icons: [{ url: "/simba.png", href: "/simba.png" }],
 };
 
 export default function RootLayout({
